@@ -20,7 +20,7 @@ def git_add_commit_push():
 
   #Modify the commit categories below
   categories = ["Books", "Programming", "AI", "Tech", "Math", "Education"]
-  category_selection = input("Enter the category for this commit (Books, Programming, AI, Tech, Math, Education): ")[0].upper().strip()
+  category_selection = input("Enter the category for this commit: [B]ooks, [P]rogramming, [A]I, [T]ech, [M]ath, [E]ducation: ")[0].upper().strip()
 
   match category_selection:
     case "B":
