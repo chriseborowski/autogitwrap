@@ -39,7 +39,8 @@ def git_add_commit_push():
       print("Invalid category selection. Exiting.")
       sys.exit(1)
 
-  commit_message=f"Add link(s) to {commit_category} section in reading.md"
+  commit_message=f"Add link(s) to {commit_category} section in filename.txt" #Replace filename.txt with the file(s) to be modified
+
   if commit_category not in categories:
     print("Invalid commit category. Exiting.")
     sys.exit(1)
