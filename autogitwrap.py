@@ -13,9 +13,10 @@ def has_staged_changes():
     result = run_command(["git", "status", "--porcelain"])
     return bool(result.strip())
 
+#Replace filename.txt with the file(s) to be modified
 def git_add_commit_push():
   print("Running git add, commit, and push...")
-  run_command(["git", "add", "content/reading.md"])
+  run_command(["git", "add", "filename.txt"])
 
   categories = ["Books", "Programming", "AI", "Tech", "Math", "Education"]
   commit_category = input("Enter the category for this commit (Books, Programming, AI, Tech, Math, Education): ").strip()
