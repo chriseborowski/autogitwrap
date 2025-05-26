@@ -18,6 +18,7 @@ def git_add_commit_push():
   print("Running git add, commit, and push...")
   run_command(["git", "add", "filename.txt"])
 
+  #Modify the commit categories below
   categories = ["Books", "Programming", "AI", "Tech", "Math", "Education"]
   commit_category = input("Enter the category for this commit (Books, Programming, AI, Tech, Math, Education): ").strip()
   commit_message=f"Add link(s) to {commit_category} section in reading.md"
