@@ -20,11 +20,29 @@ def git_add_commit_push():
 
   #Modify the commit categories below
   categories = ["Books", "Programming", "AI", "Tech", "Math", "Education"]
-  commit_category = input("Enter the category for this commit (Books, Programming, AI, Tech, Math, Education): ").strip()
-  commit_message=f"Add link(s) to {commit_category} section in filename.txt" #Replace filename.txt with the file(s) to be modified
-  if commit_category not in categories:
-      print("Invalid commit category. Exiting.")
+  category_selection = input("Enter the category for this commit (Books, Programming, AI, Tech, Math, Education): ")[0].upper().strip()
+
+  match category_selection:
+    case "B":
+      commit_category = "Books"
+    case "P":
+      commit_category = "Programming"
+    case "A":
+      commit_category = "AI"
+    case "T":
+      commit_category = "Tech"
+    case "M":
+      commit_category = "Math"
+    case "E":
+      commit_category = "Education"
+    case _:
+      print("Invalid category selection. Exiting.")
       sys.exit(1)
+
+  commit_message=f"Add link(s) to {commit_category} section in reading.md"
+  if commit_category not in categories:
+    print("Invalid commit category. Exiting.")
+    sys.exit(1)
 
   if not has_staged_changes():
     print("No changes to commit. Exiting.")
